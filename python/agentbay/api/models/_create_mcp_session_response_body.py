@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from __future__ import annotations
+from darabonba.model import DaraModel 
+from agentbay.api import models as main_models 
+from typing import Optional
 
-from alibabacloud_wuyingai20250506 import models as main_models
-from darabonba.model import DaraModel
 
 class CreateMcpSessionResponseBody(DaraModel):
     def __init__(
         self,
-        code: str = None,
-        data: main_models.CreateMcpSessionResponseBodyData = None,
-        http_status_code: int = None,
-        message: str = None,
-        request_id: str = None,
-        success: bool = None,
+        code: Optional[str] = None,
+        data: Optional[main_models.CreateMcpSessionResponseBodyData] = None,
+        http_status_code: Optional[int] = None,
+        message: Optional[str] = None,
+        request_id: Optional[str] = None,
+        success: Optional[bool] = None,
     ):
         self.code = code
         self.data = data
@@ -51,7 +52,7 @@ class CreateMcpSessionResponseBody(DaraModel):
 
         return result
 
-    def from_map(self, m: dict = None):
+    def from_map(self, m: Optional[dict] = None):
         m = m or dict()
         if m.get('Code') is not None:
             self.code = m.get('Code')
@@ -77,16 +78,15 @@ class CreateMcpSessionResponseBody(DaraModel):
 class CreateMcpSessionResponseBodyData(DaraModel):
     def __init__(
         self,
-        app_instance_id: str = None,
-        err_msg: str = None,
-        http_port: str = None,
-        network_interface_ip: str = None,
-        resource_id: str = None,
-        resource_url: str = None,
-        session_id: str = None,
-        success: bool = None,
-        token: str = None,
-        vpc_resource: bool = None,
+        app_instance_id: Optional[str] = None,
+        err_msg: Optional[str] = None,
+        http_port: Optional[str] = None,
+        network_interface_ip: Optional[str] = None,
+        resource_id: Optional[str] = None,
+        resource_url: Optional[str] = None,
+        session_id: Optional[str] = None,
+        success: Optional[bool] = None,
+        vpc_resource: Optional[bool] = None,
     ):
         self.app_instance_id = app_instance_id
         self.err_msg = err_msg
@@ -96,7 +96,6 @@ class CreateMcpSessionResponseBodyData(DaraModel):
         self.resource_url = resource_url
         self.session_id = session_id
         self.success = success
-        self.token = token
         self.vpc_resource = vpc_resource
 
     def validate(self):
@@ -131,15 +130,12 @@ class CreateMcpSessionResponseBodyData(DaraModel):
         if self.success is not None:
             result['Success'] = self.success
 
-        if self.token is not None:
-            result['Token'] = self.token
-
         if self.vpc_resource is not None:
             result['VpcResource'] = self.vpc_resource
 
         return result
 
-    def from_map(self, m: dict = None):
+    def from_map(self, m: Optional[dict] = None):
         m = m or dict()
         if m.get('AppInstanceId') is not None:
             self.app_instance_id = m.get('AppInstanceId')
@@ -164,9 +160,6 @@ class CreateMcpSessionResponseBodyData(DaraModel):
 
         if m.get('Success') is not None:
             self.success = m.get('Success')
-
-        if m.get('Token') is not None:
-            self.token = m.get('Token')
 
         if m.get('VpcResource') is not None:
             self.vpc_resource = m.get('VpcResource')
